@@ -1,7 +1,7 @@
 {
   "name": "unzip-stream",
-  "version": "0.1.2",
-  "description": "Unzip cross-platform streaming API compatible with fstream",
+  "version": "0.2.0",
+  "description": "Process zip files using streaming API",
   "author": "Michal Hruby <michal.mhr@gmail.com>",
   "maintainers": [
     {
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "binary": "^0.3.0",
-    "fstream": "^1.0.10"
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "tap": ">= 0.3.0 < 1",

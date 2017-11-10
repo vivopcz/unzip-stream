@@ -69,7 +69,7 @@ fs.createReadStream('path/to/archive.zip')
 fs.createReadStream('path/to/archive.zip').pipe(unzip.Extract({ path: 'output/path' }));
 ```
 
-Extract emits the 'finish' (also 'close' for compatibility with unzip) event once the zip's contents have been fully extracted to disk.
+Extract will emit the 'close' event when the archive is fully extracted, do NOT use the 'finish' event, which can be emitted before the writing finishes.
 
 ### What's missing?
 
