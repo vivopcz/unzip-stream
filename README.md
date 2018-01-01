@@ -71,6 +71,13 @@ fs.createReadStream('path/to/archive.zip').pipe(unzip.Extract({ path: 'output/pa
 
 Extract will emit the 'close' event when the archive is fully extracted, do NOT use the 'finish' event, which can be emitted before the writing finishes.
 
+### Extra options
+The `Parse` and `Extract` methods allow passing an object with `decodeString` property which will be used to decode non-utf8 file names in the archive. If not specified a fallback will be used.
+```javascript
+let parser = unzip.Parse({ decodeString: (buffer) => { return iconvLite.decode(buffer, 'iso-8859-2'); } });
+input.pipe(parser).pipe(...);
+```
+
 ### What's missing?
 
 Currently only ZIP files up to version 2.1 are supported - which means no Zip64 support. There's also no support for encrypted (password protected) zips, or symlinks.
