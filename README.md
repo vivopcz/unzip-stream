@@ -80,4 +80,4 @@ input.pipe(parser).pipe(...);
 
 ### What's missing?
 
-Currently only ZIP files up to version 2.1 are supported - which means no Zip64 support. There's also no support for encrypted (password protected) zips, or symlinks.
+Currently ZIP files up to version 4.5 are supported (which includes Zip64 support - archives with 4GB+ files). There's no support for encrypted (password protected) zips, or symlinks.
